@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+ 
+import Cards from "../components/Cards.astro"
+
+
+
+
+
+---
+
+<Layout title="About me">
+
+    <section class="sm:flex  items-center justify-evenly w-[100%] mb-20" >
+        <div class="flex flex-col gap-7">
+            <div class="flex flex-col gap-2">
+                <h1 class="acorn-bold title text-8xl font-bold">Hello! This is Raúl</h1>
+                <h1 class="acorn-bold text-6xl font-bold">Software developer</h1>
+            </div>
+            <p class="acorn-regular text-lg max-w-[600px] font-bold">I love being able to face new programming challenges.</p>
+            <p class="acorn-regular text-lg max-w-[600px] font-bold">I’m currently working as a FullStack Developer.</p>
+        </div>
+        <img alt="Profile image" loading="lazy" width="400" height="400" decoding="async" data-nimg="1" src="/assets/perfil.jpg" class="rounded-full">
+
+
+
+    </section>
+    <section class="flex  items-center justify-evenly w-[100%] mb-20" >
+        <h2 class="acorn-bold text-4xl max-w-[600px] text-center font-bold">If I had to say my hobbies, they would be:</h2>
+    </section>
+   
+
+    <Cards/>  
+        
+</Layout>

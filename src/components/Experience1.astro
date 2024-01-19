@@ -1,0 +1,28 @@
+---
+import ExperienceItem from "../components/ExperienceItem.astro"
+const EXPERIENCIE = [
+  {
+    date: "October 2023 – December 2023",
+    title: "Developer full-stack k Tefipro Industria 4.0. ",
+    description:
+      "Custom form creation with PHP, HTML, and Bootstrap from scratch, PLC programming using Node-RED technology in JavaScript, maintenance of the product created with Node.js, ...",
+   
+  },
+  {
+    date: "June 2021 - March 2023",
+    title: " Developer full-stack NTT Data Solutions Tecnology. ",
+    description:
+    "Backend development in international projects such as ESMA, ERC, UNDRR, and UN-NEWS. All projects have been developed using Drupal technology, and I have worked with versions 7, 8, and 9. The programming was done using PHP versions 7.4 and 8.1, Symphony, JavaScript, HTML 5, MySQL, some CSS, and YML template management.We utilized Github as a version control system. Our work followed the SCRUM MASTER methodology with the JIRA tool, where we tracked the progress of each task.The entire process of setting up environments was done through the Linux terminal using the DOCKER tool. Some specific tasks performed in different projects include creating custom modules, setting up environments from scratch, creating APIs, handling everything related to Site Building, and writing manuals in both English and Spanish, ...,"
+  },
+]
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
