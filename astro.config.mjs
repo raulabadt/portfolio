@@ -7,7 +7,7 @@ export default defineConfig({
   integrations: [tailwind()],
 
   site: 'https://portfolio.github.io',
-  // base: '/portfolio',
+  base: '/portfolio',
   server: { open: "portfolio/about" },
  
 });
