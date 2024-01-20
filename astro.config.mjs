@@ -8,6 +8,6 @@ export default defineConfig({
 
   site: 'https://portfolio.github.io',
   // base: '/portfolio',
-  server: { open: "portfolio/about" },
+  // server: { open: "portfolio/about" },
  
 });
