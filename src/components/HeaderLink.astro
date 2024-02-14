@@ -6,7 +6,6 @@ interface Props {
 }
 
 const { currentLocale = "es" } = Astro;
-const { href, className, checkActive = true, ...restOfProps } = Astro.props;
 
 const LOCALES: Record<string, { code: string; baseHref: string }> = {
   ca: {
@@ -31,7 +30,6 @@ const isActive = currentPath === destination && checkActive;
     ${className} border-b-2 font-extrabold text-2xl 
     ${isActive ? "border-white font-extrabold text-2xl" : "border-transparent font-extrabold text-2xl"}
   `}
-  {...restOfProps}
 >
   <slot />
 </a>;
