@@ -1,3 +1,4 @@
+---
 interface Props {
   checkActive?: boolean;
   href: string;
@@ -23,7 +24,7 @@ const baseHref = LOCALES[currentLocale].baseHref;
 const currentPath = Astro.url.pathname;
 const destination = `${baseHref}${href}`;
 const isActive = currentPath === destination && checkActive;
-
+---
 <a
   href={destination}
   className={`
