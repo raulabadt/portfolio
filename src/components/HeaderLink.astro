@@ -1,17 +1,11 @@
 ---
 interface Props {
-  checkActive?: boolean
-  href: string
-  class?: string
+  checkActive?: boolean;
+  href: string;
+  className?: string; // Renombrado "class" a "className"
 }
 
-const { currentLocale = "es" } = Astro
-const {
-  href,
-  class: className,
-  checkActive = true,
-  ...restOfProps
-} = Astro.props
+const { currentLocale = "es" } = Astro;
 
 const LOCALES: Record<string, { code: string; baseHref: string }> = {
   ca: {
@@ -22,23 +16,20 @@ const LOCALES: Record<string, { code: string; baseHref: string }> = {
     code: "es",
     baseHref: "",
   },
-}
+};
 
-const baseHref = LOCALES[currentLocale].baseHref
+const baseHref = LOCALES[currentLocale].baseHref;
 
-const currentPath = Astro.url.pathname
-const destination = `${baseHref}${href}`
-const isActive = currentPath === destination && checkActive
+const currentPath = Astro.url.pathname;
+const destination = `${baseHref}${href}`;
+const isActive = currentPath === destination && checkActive;
 ---
-
 <a
   href={destination}
-  class:list={[
-    className,
-    "border-b-2 font-extrabold text-2xl ",
-    isActive ? "border-white font-extrabold text-2xl" : "border-transparent font-extrabold text-2xl",
-  ]}
-  {...restOfProps}
+  className={`
+    ${className} border-b-2 font-extrabold text-2xl 
+    ${isActive ? "border-white font-extrabold text-2xl" : "border-transparent font-extrabold text-2xl"}
+  `}
 >
   <slot />
-</a>
+</a>;
