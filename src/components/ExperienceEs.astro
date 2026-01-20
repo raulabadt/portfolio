@@ -1,0 +1,36 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCIE_ES = [
+  {
+    date: "Junio 2024 – Actualidad",
+    title: "Full-Stack Developer · NeuronUP",
+    description:
+      "Desarrollo y mantenimiento del producto NeuronUP con Symfony y Angular. Diseño e implementación de APIs REST, creación de comandos personalizados para facilitar la gestión a usuarios administradores y mejora continua de la usabilidad y el rendimiento.",
+  },
+  {
+    date: "Octubre 2023 – Diciembre 2023",
+    title: "Full-Stack Developer · Tefipro Industria 4.0",
+    description:
+      "Creación de formularios a medida con PHP, HTML y Bootstrap. Automatización de procesos industriales en PLCs usando Node-RED en JavaScript y mantenimiento de productos industriales desarrollados con Node.js. Automatización del formateo de coordenadas en bases de datos mediante scripts en Python.",
+  },
+  {
+    date: "Septiembre 2020 – Marzo 2023",
+    title: "Drupal Backend Developer · NTT DATA",
+    description:
+      "Desarrollo backend para proyectos internacionales como ESMA, ERC, UNDRR y UN-NEWS utilizando Drupal 7, 8 y 9. Implementación de módulos y APIs a medida, site building completo, configuración de entornos con Docker sobre Linux y redacción de documentación técnica en inglés y español. Tecnologías: PHP 7.4/8.1, Symfony, JavaScript, HTML5, MySQL, CSS y plantillas YML.",
+  },
+]
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCIE_ES.map((experiencie) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
+
+

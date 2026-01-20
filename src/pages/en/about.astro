@@ -1,10 +1,9 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Cards from "../components/Cards.astro";
-
+import Layout from "../../layouts/Layout.astro";
+import Cards from "../../components/Cards.astro";
 ---
 
-<Layout title="About – Raúl Abad">
+<Layout title="About – Raúl Abad" lang="en">
   <section
     class="sm:flex items-center justify-between gap-12 w-full mb-20 mt-8"
   >
@@ -14,26 +13,25 @@ import Cards from "../components/Cards.astro";
       </p>
       <div class="flex flex-col gap-3">
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white">
-          Hola, soy <span class="text-sky-300">Raúl Abad</span>
+          Hi, I’m <span class="text-sky-300">Raúl Abad</span>
         </h1>
         <p class="text-lg sm:text-xl text-slate-100/90">
-          Desarrollador web con más de 4 años de experiencia creando y
-          manteniendo aplicaciones para producto digital y proyectos
-          internacionales.
+          Web developer with 4+ years of experience designing, building and
+          maintaining web applications for digital products and international
+          projects.
         </p>
       </div>
       <p class="text-base sm:text-lg text-slate-200/90">
-        Actualmente trabajo como <span class="font-semibold">Full‑Stack Developer en NeuronUP</span>,
-        desarrollando y manteniendo el producto con Symfony y Angular, diseñando
-        APIs e implementando nuevas funcionalidades orientadas a negocio.
+        I’m currently working as a <span class="font-semibold">Full‑Stack Developer at NeuronUP</span>,
+        building and maintaining the product with Symfony and Angular, designing
+        REST APIs and implementing new business‑driven features.
       </p>
       <p class="text-base sm:text-lg text-slate-200/80">
-        Antes he trabajado en compañías como <span class="font-semibold">NTT DATA</span> y
-        <span class="font-semibold"> Tefipro</span>, participando en proyectos para la
-        administración pública europea (ESMA, ERC, UNDRR, UN‑NEWS) y en
-        soluciones industriales 4.0. Me gusta enfrentarme a retos complejos,
-        entender la necesidad del cliente y convertirla en software estable y
-        escalable.
+        Previously I worked at companies such as <span class="font-semibold">NTT DATA</span> and
+        <span class="font-semibold"> Tefipro</span>, contributing to projects for the
+        European public administration (ESMA, ERC, UNDRR, UN‑NEWS) and Industry
+        4.0 solutions. I enjoy tackling complex challenges, understanding
+        stakeholder needs and turning them into reliable, scalable software.
       </p>
       <div class="flex flex-wrap gap-3 mt-2">
         <span
@@ -46,7 +44,7 @@ import Cards from "../components/Cards.astro";
         >
         <span
           class="inline-flex items-center rounded-full bg-indigo-500/15 px-4 py-1 text-sm font-medium text-indigo-100 border border-indigo-500/40"
-          >APIs REST · Docker · Git</span
+          >REST APIs · Docker · Git</span
         >
       </div>
     </div>
@@ -67,10 +65,12 @@ import Cards from "../components/Cards.astro";
     <h2
       class="text-2xl sm:text-3xl lg:text-4xl max-w-2xl text-center font-semibold text-white"
     >
-      Más allá del código, me gusta mantenerme activo, aprender cosas nuevas y
-      desconectar con hobbies que me ayudan a equilibrar creatividad y foco.
+      Beyond code, I like to stay active, keep learning and disconnect with
+      hobbies that help me balance creativity and focus.
     </h2>
   </section>
 
   <Cards />
 </Layout>
+
+

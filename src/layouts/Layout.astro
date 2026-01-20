@@ -4,24 +4,25 @@ import Header from '../components/Header.astro';
 
 interface Props {
 	title: string;
+	lang?: string;
 }
 
-const { title } = Astro.props;
+const { title, lang = "es" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="./public/icon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/icon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-gradient-to-r from-indigo-500 min-h-screen pb-32">
+	<body class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white min-h-screen pb-32">
 		<Header/>
-		<main class="mx-w-5xl px-4 m-auto">
+		<main class="max-w-5xl px-4 m-auto">
 			
 			<slot />
 		</main>

@@ -1,10 +1,80 @@
-<header class="py-8 px-4 mx-auto max-w-xl lg:py-16 lg:px-6">
-    <nav class="flex flex-col items-center justify-between w-full text-center sm:flex-row">
-        <a href="/portfolio/about" class="text-white mr-6 border-b-2 border-transparent border-b-2 font-extrabold text-2xl  border-transparent font-extrabold text-2xl hover:border-white">About</a>
-        <a href="/portfolio/skills" class="text-white mr-6 border-b-2 border-transparent border-b-2 font-extrabold text-2xl  border-transparent font-extrabold text-2xl hover:border-white">Skills</a>
-        <a href="/portfolio/projects" class="text-white mr-6 border-b-2 border-transparent border-b-2 font-extrabold text-2xl  border-transparent font-extrabold text-2xl hover:border-white">Projects</a>
-        <a href="/portfolio/experience" class="text-white mr-6 border-b-2 border-transparent border-b-2 font-extrabold text-2xl  border-transparent font-extrabold text-2xl hover:border-white">Experience</a>
-        <a href="/portfolio/contacts" class="text-white mr-6 border-b-2 border-transparent border-b-2 font-extrabold text-2xl  border-transparent font-extrabold text-2xl hover:border-white">Contacts</a>
-       
-    </nav>
+---
+const { pathname } = Astro.url
+
+const base = "/portfolio"
+const pathWithoutBase = pathname.startsWith(base)
+  ? pathname.slice(base.length) || "/about"
+  : pathname || "/about"
+
+const segments = pathWithoutBase.split("/").filter(Boolean)
+const isEn = segments[0] === "en"
+const pageSlug = isEn ? segments[1] || "about" : segments[0] || "about"
+
+const linkFor = (slug: string) =>
+  isEn ? `${base}/en/${slug}` : `${base}/${slug}`
+
+const esPath = `${base}/${pageSlug || "about"}`
+const enPath = `${base}/en/${pageSlug || "about"}`
+---
+
+<header class="py-6 px-4 mx-auto max-w-5xl lg:py-8 lg:px-6">
+  <nav
+    class="flex flex-col gap-4 items-center justify-between w-full text-center sm:flex-row"
+  >
+    <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+      <a
+        href={linkFor("about")}
+        class="text-white/90 border-b-2 border-transparent text-lg sm:text-xl font-extrabold hover:border-sky-300 hover:text-white transition-colors"
+      >
+        {isEn ? "About" : "Sobre mí"}
+      </a>
+      <a
+        href={linkFor("skills")}
+        class="text-white/90 border-b-2 border-transparent text-lg sm:text-xl font-extrabold hover:border-sky-300 hover:text-white transition-colors"
+      >
+        {isEn ? "Skills" : "Habilidades"}
+      </a>
+      <a
+        href={linkFor("projects")}
+        class="text-white/90 border-b-2 border-transparent text-lg sm:text-xl font-extrabold hover:border-sky-300 hover:text-white transition-colors"
+      >
+        {isEn ? "Projects" : "Proyectos"}
+      </a>
+      <a
+        href={linkFor("experience")}
+        class="text-white/90 border-b-2 border-transparent text-lg sm:text-xl font-extrabold hover:border-sky-300 hover:text-white transition-colors"
+      >
+        {isEn ? "Experience" : "Experiencia"}
+      </a>
+      <a
+        href={linkFor("contacts")}
+        class="text-white/90 border-b-2 border-transparent text-lg sm:text-xl font-extrabold hover:border-sky-300 hover:text-white transition-colors"
+      >
+        {isEn ? "Contact" : "Contacto"}
+      </a>
+    </div>
+
+    <div class="flex items-center gap-2 rounded-full bg-slate-900/70 px-2 py-1 border border-slate-700/70">
+      <a
+        href={esPath}
+        class={`px-3 py-1 text-xs font-semibold rounded-full transition ${
+          !isEn
+            ? "bg-sky-500 text-white shadow-md shadow-sky-900/40"
+            : "text-slate-200 hover:text-white"
+        }`}
+      >
+        ES
+      </a>
+      <a
+        href={enPath}
+        class={`px-3 py-1 text-xs font-semibold rounded-full transition ${
+          isEn
+            ? "bg-sky-500 text-white shadow-md shadow-sky-900/40"
+            : "text-slate-200 hover:text-white"
+        }`}
+      >
+        EN
+      </a>
+    </div>
+  </nav>
 </header>
